@@ -22,7 +22,7 @@ export default {
     },
     methods:{
         ingresar(){
-
+            this.mensaje="Logueado";
         }
     }
 }

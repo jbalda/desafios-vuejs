@@ -6,15 +6,26 @@
       <p>{{articulo.precio}}</p>
       <p>{{articulo.descripcion}}</p>
       <p>{{articulo.imagen}}</p> -->
-      <p><button>Agregar al carrito</button></p>
+      <p><button :click="loguear">Agregar al carrito</button></p>
+      <p>{{mensaje}}</p>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'info-producto',
+    name: 'producto-view',
+    data(){
+      return{
+        mensaje: ''
+      }
+    },
     prop:{
       articulo:Object
+    },
+    methods:{
+      loguear(){
+        this.mensaje ="Logueado";
+      }
     }
 }
 </script>

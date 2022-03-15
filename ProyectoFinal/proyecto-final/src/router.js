@@ -21,22 +21,22 @@ export default new VueRouter({
         {
             path:'/productos',
             name:'productos',
-            component: ()   => import('./views/Listado.vue')
+            component: ()   => import('./views/ProductosView.vue')
         },
         {
             path:'/carrito',
             name:'carrito',
-            component: ()   => import('./views/Carrito.vue')
+            component: ()   => import('./views/CarritoView.vue')
         },
         {
-            path:'/producto',
-            name:'info',
-            component: ()  => import('./views/Info.vue')
+            path:'/producto/:id',
+            name:'producto',
+            component: ()  => import('./views/ProductoView.vue')
         },
         {
             path:'/login',
             name:'login',
-            component: ()   => import('./views/Login.vue')
+            component: ()   => import('./views/LoginView.vue')
         },
         {
             path:'/registro',
