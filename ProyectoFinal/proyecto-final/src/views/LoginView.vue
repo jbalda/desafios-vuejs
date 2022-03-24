@@ -26,19 +26,18 @@ export default {
     },
     methods:{
         ingresar(){
-            const res;
+            let res;
             axios.get('https://602ee9da4410730017c51705.mockapi.io/api/v1/usuarios')
-                .then((response) => {res = response.data})
+                .then((response) => {
+                    res = response.data
+                    const usu = res.find(u=> u.nombreUsuario = this.nombreUsuario && u.clave == this.contraseña); //this.usuariosPrueba.find(u=> u.nombreUsuario = this.nombreUsuario && u.clave == this.contraseña);
+                    if(usu){
+                        this.$router.push("/productos");
+                    }else{
+                    this.mensaje="Error";
+                    }})
                 .catch((err) => {console.error(`${err}`)})
-
-
-            const usu = res.find(u=> u.nombreUsuario = this.nombreUsuario && u.clave == this.contraseña); //this.usuariosPrueba.find(u=> u.nombreUsuario = this.nombreUsuario && u.clave == this.contraseña);
-            if(usu){
-                this.$router.push("/productos");
-            }
-            this.mensaje="Error";
         }
-
     }
 }
 </script>
