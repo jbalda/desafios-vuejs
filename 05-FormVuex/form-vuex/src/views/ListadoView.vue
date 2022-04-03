@@ -5,11 +5,10 @@
 </template>
 
 <script>
-import ListaExportaciones from '../../../../04-Formulario/desafio-4-formulario/src/components/ListaExportaciones.vue'
-import Formulario from '../components/ListaExportaciones.vue'
+import ListaExportaciones from '../components/ListaExportaciones.vue'
 export default {
-    name: 'ListdoView',
-    components:{Formulario, ListaExportaciones}
+    name: 'ListadoView',
+    components:{ListaExportaciones}
 }
 </script>
 

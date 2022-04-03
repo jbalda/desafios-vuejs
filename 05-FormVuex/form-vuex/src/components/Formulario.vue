@@ -21,7 +21,7 @@
 
 <script>
 import ListadoExp from './ListaExportaciones.vue';
-
+import  { mapActions} from 'vuex';
 export default {
     name: 'formulario-alta',
     components: {
@@ -43,11 +43,18 @@ export default {
         }
     },
     methods:{
+        ...mapActions(['agregarExportacion']),
         procesarFormulario(e){
              this.errors=[];
             this.validarFormulario();
             if(this.errors.length==0){
-                this.exportaciones.push({region:this.region,cantidad:this.cantidad,donacion:this.donacion,detalle:this.detalle});
+                //this.exportaciones.push({region:this.region,cantidad:this.cantidad,donacion:this.donacion,detalle:this.detalle});
+                this.agregarExportacion({
+                    "region":this.regiones.find(r=> r.numero == this.region),
+                    "cantidad":this.cantidad,
+                    "detalle":this.detalle,
+                    "donacion":this.donacion
+                });
                 console.log(this.exportaciones);
                 this.region="";
                 this.cantidad =0;

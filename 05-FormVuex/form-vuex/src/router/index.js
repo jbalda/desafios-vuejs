@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+
 
 Vue.use(VueRouter)
 
@@ -24,14 +25,14 @@ const routes = [
     component:()=> import('../views/FormularioView.vue')
   },
   {
-    path: '/listado',
-    name:'listado',
+    path: '/exportaciones',
+    name:'exportaciones',
     component:()=> import('../views/ListadoView.vue')
   }
-]
+];
 
 const router = new VueRouter({
   routes
-})
+});
 
-export default router
+export default router;
