@@ -15,7 +15,7 @@ export default new Vuex.Store({
     //Item: {idProducto, cantidad}
     agregarItemAlCarrito(state, item ){
       console.log(item);
-      let elem = state.carrito.find(e=> e.productoId == item.producto.id);
+      let elem = state.carrito.find(e=> e.producto.numero == item.producto.numero);
       console.log(elem);
       if(elem == null){
         state.carrito.push(item);
